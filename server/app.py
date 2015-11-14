@@ -3,7 +3,14 @@ import sys
 import traceback
 from dabaopku.utils.network import generate_response, get_request_params
 
-app = flask.Flask(__name__)
+
+class App(flask.Flask):
+    def get_send_file_max_age(self, name):
+        if name == u'js/app.js':
+            return 0
+        return flask.Flask.get_send_file_max_age(self, name)
+        
+app = App(__name__)
 app.config.update({"DEBUG": True })
 
 @app.route("/")

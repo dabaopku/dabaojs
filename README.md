@@ -11,9 +11,7 @@
 $ npm install
 ```
 
-## Build and Run
-
-### Build library
+## Build Library
 
 ```sh
 $ gulp script:lib
@@ -29,15 +27,15 @@ the library file, set a mapping in `package.json` like:
 }
 ```
 
-### Build application
+## Build Application
 
 ```sh
 $ npm start
 ```
 
 The entry point is `client/js/main.js`. browserify will analyse file dependencies and
-bundle required files into `server/static/js/app.lib`. Libraries files will be excluded.
+bundle required files into `server/static/js/app.lib`. Library files will be excluded.
 
-The system will start a simple `flask` server. Goto [[http://127.0.0.1:8912/]].
+The system will start a simple `flask` server. Goto http://127.0.0.1:8912/.
 
 
